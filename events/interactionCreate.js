@@ -267,6 +267,15 @@ module.exports = {
                     let currency = account.currencies.find(currency => currency.name === currencyName)
                     let selectedCurrency = currencies.find(currency => currency.name === currencyName)
 
+                    const source = interaction.member
+                    let sourceAccount = accounts.find(account => account['user-id'] === source.id)
+                    if (!source.permissions.has('ADMINISTRATOR')) {
+                        let sourceCurrency = sourceAccount.currencies.find(currency => currency.name === currencyName)
+                        if (!sourceCurrency || sourceCurrency.amount < amount) 
+                            return await interaction.update({ content: `❌ You don't have enough **${currencyName}** to give **${amount}** to ${target}`, components: [] })
+                        sourceCurrency.amount -= amount
+                    }
+
                     if (currency) currency.amount += amount
                     else account.currencies.push({ name: currencyName, id: selectedCurrency.id, amount: amount})
                     
