@@ -23,6 +23,7 @@ const data = new SlashCommandBuilder()
     .addStringOption(option => option
         .setName('product-description')
         .setDescription('The description of the product')
+        .setRequired(true)
         .setMaxLength(160)
         .setMinLength(1)
     )
