@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, ModalBuilder, TextInputBuilder, ActionRowBuilder, TextInputStyle, ButtonStyle, ButtonBuilder, StringSelectMenuBuilder } = require('discord.js');
+const { SlashCommandBuilder, ModalBuilder, TextInputBuilder, ActionRowBuilder, TextInputStyle, ButtonStyle, ButtonBuilder, StringSelectMenuBuilder, PermissionFlagsBits } = require('discord.js');
 
 
 const shops = require('../data/shops.json')
