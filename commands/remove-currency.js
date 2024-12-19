@@ -6,7 +6,7 @@ const currencies = require('../data/currencies.json')
 const data = new SlashCommandBuilder()
     .setName('remove-currency')
     .setDescription('Removes the Selected Currency')
-
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 
 async function execute(interaction){
     if (!currencies.length) return await interaction.reply({ content: `There isn't any currency, so you can't remove one, use \`/create-currency\` to create a new currency`, ephemeral: true })

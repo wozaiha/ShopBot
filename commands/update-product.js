@@ -39,6 +39,7 @@ const data = new SlashCommandBuilder()
             .setMinValue(0)
         )
     )
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
     
     
 async function execute(interaction){

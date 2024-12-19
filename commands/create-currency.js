@@ -14,6 +14,7 @@ const data = new SlashCommandBuilder()
         .setMaxLength(40)
         .setMinLength(1)
     )
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 
 
 async function execute(interaction){

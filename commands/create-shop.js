@@ -12,6 +12,7 @@ const data = new SlashCommandBuilder()
         .setMaxLength(120)
         .setMinLength(1)
     )
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 
 async function execute(interaction){
     if (!currencies.length) return await interaction.reply({ content: `There isn't any currency, so the shop creation can't be initialized, use \`/create-currency\` to create a new currency`, ephemeral: true })

@@ -6,6 +6,7 @@ const shops = require('../data/shops.json')
 const data = new SlashCommandBuilder()
     .setName('remove-product')
     .setDescription('Removes a Product from the Selected Shop')
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 
 async function execute(interaction){
     if (!shops.length) return await interaction.reply({ content: `There isn't any shop, so you can't remove a product, use \`/create-shop\` to create a new shop, and \`/add-product\` to add products`, ephemeral: true })

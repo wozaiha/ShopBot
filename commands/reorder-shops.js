@@ -5,7 +5,7 @@ const shops = require('../data/shops.json')
 const data = new SlashCommandBuilder()
     .setName('reorder-shops')
     .setDescription('Allows you to reorder shops')
-
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 
 async function execute(interaction){
     if (!shops.length) return await interaction.reply({ content: `❌ There isn't any shop, use \`/create-shop\` to create a new one`, ephemeral: true })

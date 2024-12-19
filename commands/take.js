@@ -17,6 +17,7 @@ const data = new SlashCommandBuilder()
         .setRequired(true)
         .setMinValue(1)
     )
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 
 async function execute(interaction){
     if (!currencies.length) return await interaction.reply({ content: `There isn't any currency, so you can't take, use \`/create-currency\` to create a new currency`, ephemeral: true })
